@@ -17,7 +17,8 @@ end; (* notice the begin statement marks the start of the commands that the for 
 (* when i gets beyond n we exit out of the for loop *)
 s:=0; (* we need a variable to store the sum of elements,  *)
 for i:=1 to n do begin (* again a loop that will be used to repeat a set of commands, a certain number of times, in this case from i = 1 to i = n *)
-if (a[i] % 2 = 1) then begin (* this is what I added, here you see is an if statement, self-explanatory, a[i] % 2 is a mathematical operation, it gives us the remainder when a[i], which is the number at the position i in the array a, is divided by 2, which can be 0 or 1, basic maths *)
+if (a[i] % 2 = 1) then begin (* this is what I added, here you see is an if statement, self-explanatory, a[i] % 2 is a mathematical operation, it gives us the remainder when a[i],
+which is the number at the position i in the array a, is divided by 2, which can be 0 or 1, basic maths *)
 s:=s+a[i]; (* when the remainder is 1 it means the number is odd, and hence we will add that number to the sum, to do that we re-assign the value of s to s + a[i]*)
 end; (* this marks the end of the set of statements that the program will run if i is odd, i.e. i%2 = 1, btw a[i] is a notation to get the element at position i in the list a *)
 end; (* this marks the end of the for loop commands *)
