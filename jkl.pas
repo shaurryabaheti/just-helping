@@ -3,7 +3,7 @@ uses crt; { a package library }
 type vector=array[1..100] of longint; { setting up the type of array }
 { setting up all the variables }
 var a:vector;
-i,n,min:longint;
+i,n,max:longint;
 f,g:text;
 
 { Starting the program }
@@ -20,18 +20,15 @@ read(f,a[i]);
 write(a[i]:4);
 end;
 
-{ finding the minimum element of the array }
-min:=a[1]; { using the first element as the comparison point, the comparison point will be the minimum one by the end of the array }
+{ finding the maximum element of the array }
+max:=a[1]; { using the first element as the comparison point, the comparison point will be the maximum one by the end of the array }
+for i:=1 to n do
+if a[i]>max then { if the element that we are looking at (a[i]) is more than the comparison point, we change the value of the comparison point to this }
+max:=a[i];
+{ changing the negative elements of the array to the maximum element we found above, and writing it and the ones that were not changed as well }
 for i:=1 to n do begin
-if a[i]<min then begin { if the element that we are looking at (a[i]) is less than the comparison point, we change the value of the comparison point to this }
-min:=a[i];
-end;
-end;
-{ changing the positive elements of the array to the minimum element we found above, and writing it and the ones that were not changed as well }
-for i:=1 to n do begin
-if a[i]>0 then begin
-a[i]:=min;
-end;
+if a[i]<0 then
+a[i]:=max;
 write(g,a[i]:4);
 end;
 { this is literally the most important part, don't forget to close the files xD }
